@@ -1,4 +1,4 @@
-# Change the number of channels from input
+# Change the number of channels
 - In the config files add/remove channels in the dataset-images-channels section of the json file
 - In the index.csv in the Metadata add/remove columns for the different channels
 
