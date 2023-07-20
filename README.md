@@ -2,6 +2,21 @@
 - In the config files add/remove channels in the dataset-images-channels section of the json file
 - In the index.csv in the Metadata add/remove columns for the different channels
 
+# Exporting and Training
+To export:
+```
+python3 deepprofiler --root=/home/gridsan/NAME/DeepProfiler/example_data/ --config=export.json --metadata=index.csv --single-cells=single_cells_dataset export-sc
+```
+To train:
+```
+python3 deepprofiler --root=/home/gridsan/NAME/DeepProfiler/example_data/ --config training_profiling.json --metadata index.csv --single-cells=single_cells_dataset --exp results --gpu=1 train
+```
+# Profiling
+```
+python3 deepprofiler --root=/home/gridsan/gbor/DeepProfiler/example_data/ --config training_profiling.json --metadata index.csv --exp results --gpu=1 profile
+```
+
+
 # Image-based profiling using deep learning 
 
 DeepProfiler is a set of tools to use deep learning for analyzing imaging data in high-throughput biological experiments.
