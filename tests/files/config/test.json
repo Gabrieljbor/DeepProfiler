@@ -1,0 +1,103 @@
+{
+    "dataset": {
+        "metadata": {
+            "label_field": "Class",
+            "control_id": "17"
+        },
+        "images": {
+            "channels": [
+                "R",
+                "G",
+                "B"
+              ],
+            "file_format": "tif",
+            "width": 128,
+            "height": 128,
+            "bits": 16
+        },
+        "locations": {
+            "mode": "single_cells",
+            "box_size": 16,
+            "view_size": 64,
+            "mask_objects": false
+        }
+    },
+    "prepare": {
+        "illumination_correction": {
+            "down_scale_factor": 4,
+            "median_filter_size": 24
+        },
+        "compression": {
+            "implement": true,
+            "scaling_factor": 1.0
+        }
+    },
+    "train": {
+        "partition": {
+            "targets": [
+                "Class"
+            ],
+            "split_field": "Split",
+            "training": [0],
+            "validation": [1]
+        },
+        "model": {
+            "name": "cnn",
+            "augmentations": false,
+            "crop_generator": "crop_generator",
+            "metrics": ["accuracy"],
+            "epochs": 5,
+            "initialization": "random",
+            "checkpoint_policy": 1,
+            "params": {
+                "learning_rate": 0.0001,
+                "batch_size": 2,
+                "conv_blocks": 1,
+                "label_smoothing": 0.0,
+                "feature_dim": 100,
+                "latent_dim": 100,
+                "epsilon_std": 1.0,
+                "online_label_smoothing": 0.1,
+                "online_lambda": 0.01
+            },
+            "lr_schedule" : {
+                "epoch": [1,3,5],
+                "lr": [0.001, 0.0005, 0.0001]
+            }
+        },
+        "sampling": {
+            "factor": 1.0,
+            "cache_size": 10,
+            "workers": 2,
+            "alpha": 0.2
+        },
+          "validation": {
+              "top_k": 1,
+              "batch_size": 2,
+              "sample_first_crops" : true
+          }
+    },
+    "profile": {
+      "feature_layer": "features",
+      "checkpoint": "checkpoint_0003.hdf5",
+      "use_pretrained_input_size": false,
+      "batch_size": 2
+    },
+    "paths": {
+        "locations": "/inputs/locations",
+        "config_folder": "/inputs/config",
+        "images": "/inputs/images",
+        "metadata": "/inputs/metadata",
+        "preprocessed": "/inputs/preprocessed",
+        "intensities": "/outputs/intensities",
+        "compressed_images": "/outputs/compressed/images",
+        "compressed_metadata": "/outputs/compressed/metadata",
+        "training": "/outputs/training",
+        "checkpoints": "/outputs/training/checkpoints",
+        "logs": "/outputs/training/logs",
+        "summaries": "/outputs/training/summaries",
+        "features": "/outputs/features",
+        "index": "/inputs/metadata/index.csv",
+        "config_file": "/inputs/config/config.json"
+    }
+}

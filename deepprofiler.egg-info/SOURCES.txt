@@ -1,0 +1,12 @@
+AUTHORS.md
+LICENSE
+README.md
+setup.cfg
+setup.py
+deepprofiler/__init__.py
+deepprofiler/__main__.py
+deepprofiler.egg-info/PKG-INFO
+deepprofiler.egg-info/SOURCES.txt
+deepprofiler.egg-info/dependency_links.txt
+deepprofiler.egg-info/requires.txt
+deepprofiler.egg-info/top_level.txt
