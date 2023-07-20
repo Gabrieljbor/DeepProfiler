@@ -1,10 +1,6 @@
-![DeepProfiler](figures/logo/banner.png)
------------------
-[![Python 3.6+](https://img.shields.io/badge/python-3.6%2B-blue)](https://www.python.org/downloads/release/python-360/)
-[![Tensorflow 2.5+](https://img.shields.io/badge/tensorflow-2.5%2B-brightgreen)](https://www.tensorflow.org/install/pip)
-[![Cell Painting CNN-1 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7114558.svg)](https://doi.org/10.5281/zenodo.7114558)
-[![Example data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7515132.svg)](https://doi.org/10.5281/zenodo.7515132)
-[![CometML](https://img.shields.io/badge/comet.ml-track-brightgreen.svg)](https://www.comet.ml)
+# Change the number of channels from input
+- In the config files add/remove channels in the dataset-images-channels section of the json file
+- In the index.csv in the Metadata add/remove columns for the different channels
 
 # Image-based profiling using deep learning 
 
