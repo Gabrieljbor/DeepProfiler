@@ -78,7 +78,6 @@ class DeepProfilerModel(abc.ABC):
 
         # Create callbacks
         callbacks = setup_callbacks(self, schedule_epochs, schedule_lr, self.dset, experiment)
-
         # Train model
         self.feature_model.fit(
             self.train_crop_generator.generator(main_session),

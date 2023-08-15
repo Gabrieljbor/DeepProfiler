@@ -9,8 +9,7 @@
                 "DNA",
                 "RNA",
                 "ER",
-                "AGP",
-                "Mito"
+                "AGP"
               ],
             "file_format": "tif",
             "bits": 16,

@@ -16,4 +16,6 @@ class MetricClass(Metric):
         single_class_prec = [tf.keras.metrics.Precision(class_id=cls) for cls in range(self.config["num_classes"])]
         for cls_prec in single_class_prec:
             result += cls_prec(y_true, y_pred)
+            print(cls_prec)
+            print(cls_prec(y_true, y_pred))
         return result / len(single_class_prec) 

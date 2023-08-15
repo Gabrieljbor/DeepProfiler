@@ -20,7 +20,7 @@ def learn_model(config, dset, epoch=1, seed=None, verbose=1):
             "categorical_accuracy",
             "sparse_categorical_accuracy",
             "top_k_categorical_accuracy",
-            "sparse_top_k_categorical_accuracy"
+            "sparse_top_k_categorical_accuracy",
         ]
         if type(config["train"]["model"]["metrics"] is list):
             metrics = list(map(lambda metric: importlib.import_module(
